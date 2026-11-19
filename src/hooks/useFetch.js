@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { buildUrl, fetchData } from "../api/api";
+import { buildUrl, fetchData } from "../api/API";
 
 export default function useFetch(endpoint, params = {}) {
   const [requestId, setRequestId] = useState(0);
