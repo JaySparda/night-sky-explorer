@@ -1,0 +1,1177 @@
+/* PART 11 - ADDED: keep variables.css beside this file */
+@import "./variables.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* PART 11 - MODIFIED */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* PART 11 - MODIFIED */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   PAGE STYLES
+========================= */
+
+.page {
+  margin-bottom: 32px;
+}
+
+/* PART 11 - MODIFIED */
+.page h1 {
+  font-size: clamp(24px, 4vw, 32px);
+  margin-bottom: 4px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+/* PART 11 - MODIFIED */
+.subtitle {
+  color: var(--color-muted);
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+/* PART 11 - MODIFIED */
+.result-count {
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* =========================
+   STATUS MESSAGES
+========================= */
+
+/* PART 11 - MODIFIED */
+.status {
+  padding: 24px;
+  text-align: center;
+  color: var(--color-muted);
+  background: var(--color-surface);
+  border-radius: 8px;
+}
+
+.error {
+  padding: 16px;
+  color: #b91c1c;
+  background: #fee2e2;
+  border-radius: 8px;
+}
+
+/* =========================
+   CARD GRID
+========================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* PART 11 - MODIFIED */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px;
+  color: #ffffff;
+  background: #475569;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* PART 11 - MODIFIED */
+.card-header.galaxy {
+  background: var(--color-galaxy);
+}
+
+/* PART 11 - MODIFIED */
+.card-header.nebula {
+  background: var(--color-nebula);
+}
+
+/* PART 11 - MODIFIED */
+.card-header.cluster {
+  background: var(--color-cluster);
+}
+
+/* PART 11 - MODIFIED */
+.card-body {
+  padding: 24px;
+}
+
+.card-body h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* =========================
+   DATA TABLE
+========================= */
+
+/* PART 11 - MODIFIED */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* PART 11 - MODIFIED */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 14px;
+  min-width: 620px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+  background: #e2e8f0;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.data-table tbody tr:hover {
+  background: #eef2ff;
+}
+
+/* =========================
+   METEOR SHOWER LIST
+========================= */
+
+/* PART 11 - MODIFIED */
+.meteor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* PART 11 - MODIFIED */
+.meteor-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* PART 11 - MODIFIED */
+.meteor-rate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  padding: 12px;
+  background: #eef2ff;
+  color: #4338ca;
+  border-radius: 8px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.meteor-rate strong {
+  font-size: 26px;
+}
+
+.meteor-rate small {
+  font-size: 11px;
+}
+
+.meteor-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.meteor-info h2 {
+  font-size: 18px;
+}
+
+.meteor-info p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.meteor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.meteor-tags span {
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE LAYOUT
+========================= */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page h1 {
+    font-size: 24px;
+  }
+}
+
+/* =========================
+   SEARCH AND FILTER CONTROLS
+========================= */
+
+.controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+  min-width: 0;
+}
+
+.search-input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.search-input::placeholder {
+  color: #94a3b8;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+.clear-search {
+  padding: 11px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.clear-search:hover {
+  background: #e2e8f0;
+}
+
+.clear-search:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* =========================
+   DROPDOWN FILTER
+========================= */
+
+.filter-select {
+  min-width: 160px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.filter-select:hover {
+  border-color: #94a3b8;
+}
+
+.filter-select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px #e0e7ff;
+}
+
+@media (max-width: 600px) {
+  .filter-select {
+    width: 100%;
+  }
+}
+
+/* =========================
+   FILTER CHIP PANEL
+========================= */
+
+/* PART 11 - MODIFIED */
+.filter-panel {
+  padding: 24px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-group {
+  margin-bottom: 18px;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FILTER CHIP ROW
+========================= */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* =========================
+   DEFAULT CHIP
+========================= */
+
+.chip {
+  padding: 8px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.chip:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* =========================
+   SELECTED CHIP
+========================= */
+
+/* PART 11 - MODIFIED */
+.chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* PART 11 - MODIFIED */
+.chip.active:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.chip:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+  .filter-panel {
+    padding: 14px;
+  }
+
+  .chip {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .chip-row {
+    gap: 6px;
+  }
+}
+
+/* =========================
+   EXOPLANET CONTROLS
+========================= */
+
+/* PART 11 - MODIFIED */
+.exoplanet-controls {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 18px;
+  margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   TOGGLE BUTTON GROUP
+========================= */
+
+.toggle-buttons .filter-group {
+  margin-bottom: 0;
+}
+
+.toggle-buttons .chip-row {
+  gap: 4px;
+}
+
+.toggle-buttons .chip {
+  min-width: 70px;
+  padding: 9px 16px;
+  border-radius: 6px;
+}
+
+/* PART 11 - MODIFIED */
+.toggle-buttons .chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* =========================
+   RESPONSIVE CONTROLS
+========================= */
+
+@media (max-width: 600px) {
+  .exoplanet-controls {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 14px;
+  }
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.page-button {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    border-color 0.2s,
+    color 0.2s;
+}
+
+.page-button:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* PART 11 - MODIFIED */
+.page-button.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* PART 11 - MODIFIED */
+.page-button.active:hover {
+  background: var(--color-primary-hover);
+}
+
+.page-button:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.pagination-info {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .pagination {
+    gap: 6px;
+  }
+
+  .page-button {
+    min-width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================
+   REQUEST STATES
+========================= */
+
+.request-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 220px;
+  padding: 32px 20px;
+  margin: 16px 0;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+  gap: 12px;
+}
+
+.request-state h3 {
+  font-size: 18px;
+  color: #1e293b;
+}
+
+.request-state p {
+  max-width: 400px;
+  font-size: 14px;
+  color: #64748b;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   LOADING SPINNER
+========================= */
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   STATE ICONS
+========================= */
+
+.state-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.error-state {
+  border-color: #fecaca;
+  background: #fffafa;
+}
+
+.error-state .state-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.error-state h3 {
+  color: #b91c1c;
+}
+
+.empty-state .state-icon {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.retry-button,
+.reset-button {
+  margin-top: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.retry-button {
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.retry-button:hover {
+  background: #4338ca;
+}
+
+.reset-button {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+}
+
+.reset-button:hover {
+  background: #f1f5f9;
+}
+
+.retry-button:focus-visible,
+.reset-button:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .request-state {
+    min-height: 180px;
+    padding: 24px 16px;
+  }
+}
+
+/* =========================
+   APPLICATION LAYOUT
+========================= */
+
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-icon {
+  color: #a5b4fc;
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.nav-link {
+  padding: 9px 14px;
+  border-radius: 6px;
+
+  color: #cbd5e1;
+  font-size: 14px;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: #334155;
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: #4f46e5;
+}
+
+.nav-link:focus-visible,
+.navbar-brand:focus-visible {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 24px;
+  background: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer p:first-child {
+  margin-bottom: 4px;
+  color: #e2e8f0;
+  font-weight: 600;
+}
+
+/* =========================
+   HOME HERO
+========================= */
+
+.home-hero {
+  padding: 64px 24px;
+  margin-bottom: 40px;
+
+  background:
+    radial-gradient(ellipse at top, #4338ca 0%, transparent 60%),
+    linear-gradient(135deg, #0f172a, #1e1b4b);
+
+  color: #ffffff;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.hero-icon {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 56px;
+  color: #c7d2fe;
+}
+
+.hero-eyebrow {
+  margin-bottom: 12px;
+  color: #a5b4fc;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.home-hero h1 {
+  margin-bottom: 16px;
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.2;
+}
+
+.hero-description {
+  max-width: 560px;
+  margin: 0 auto 28px;
+
+  color: #cbd5e1;
+  font-size: 16px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 24px;
+
+  background: #4f46e5;
+  color: #ffffff;
+
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-button:hover {
+  background: #4338ca;
+}
+
+/* =========================
+   HOME CATEGORY CARDS
+========================= */
+
+.home-section-heading {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.home-section-heading h2 {
+  margin-bottom: 6px;
+  font-size: 26px;
+}
+
+.home-section-heading p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px #0f172a15;
+}
+
+.home-card-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 150px;
+  font-size: 60px;
+}
+
+.home-card-art.deep-sky {
+  background: linear-gradient(135deg, #1e1b4b, #4338ca);
+}
+
+.home-card-art.exoplanets {
+  background: linear-gradient(135deg, #0c4a6e, #1e3a8a);
+}
+
+.home-card-art.meteors {
+  background: linear-gradient(135deg, #3b0764, #7e22ce);
+}
+
+.home-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px;
+}
+
+.home-card-body h2 {
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.home-card-body p {
+  margin-bottom: 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.home-card-link {
+  margin-top: auto;
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero-button:focus-visible,
+.home-card:focus-visible {
+  outline: 3px solid #818cf8;
+  outline-offset: 3px;
+}
+
+/* =========================
+   NOT FOUND PAGE
+========================= */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 60vh;
+  padding: 32px 16px;
+  text-align: center;
+  gap: 16px;
+}
+
+.not-found-code {
+  color: #4f46e5;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.not-found p {
+  color: #64748b;
+}
+
+/* =========================
+   RESPONSIVE NAVIGATION
+========================= */
+
+@media (max-width: 900px) {
+  .navbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-inner {
+    padding: 12px 16px;
+  }
+
+  .navbar-brand {
+    font-size: 18px;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero {
+    padding: 40px 20px;
+    margin-bottom: 28px;
+  }
+
+  .home-card-art {
+    min-height: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-card,
+  .nav-link {
+    transition: none;
+  }
+
+  .home-card:hover {
+    transform: none;
+  }
+}
+
+/* PART 11 - ADDED: final polish */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.sky-card {
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+.sky-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.data-table th:nth-child(3),
+.data-table td:nth-child(3),
+.data-table th:nth-child(5),
+.data-table td:nth-child(5) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+@media (max-width: 600px) {
+  .search-bar {
+    width: 100%;
+  }
+  .card-body,
+  .meteor-card,
+  .filter-panel {
+    padding: 16px;
+  }
+  .meteor-card {
+    gap: 8px;
+  }
+  .meteor-rate {
+    min-width: 64px;
+  }
+  .meteor-info h2 {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sky-card,
+  .chip {
+    transition: none;
+  }
+  .sky-card:hover {
+    transform: none;
+  }
+}
